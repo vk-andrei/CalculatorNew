@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Style_one" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:textSize">@dimen/buttons_text_size</item>
+        <item name="backgroundTint">#3B0CEC78</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="rippleColor">@color/white</item>
+        <item name="strokeColor">@color/blueBlack</item>
+    </style>
+
+    <style name="Style_one.Operators">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">#51E45A76</item>
+    </style>
+
+    <style name="Style_one.EqualAndClear">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">#6DFF0000</item>
+    </style>
+    
+
+    <style name="Style_two" parent="Style_one">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:backgroundTint">#4DF68787</item>
+        <item name="rippleColor">#4DF44336</item>
+        <item name="strokeColor">#2E3F51B5</item>
+    </style>
+    <style name="Style_two.Operators">
+        <item name="android:backgroundTint">#4D27FF00</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="Style_two.EqualAndClear">
+        <item name="android:backgroundTint">#4DAC03F4</item>
+        <item name="android:textColor">#002AFF</item>
+    </style>
+
+
+
+
+
+
+</resources>

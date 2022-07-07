@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="theme_for_buttons" format="reference" />
+    <attr name="theme_for_operators" format="reference" />
+    <attr name="theme_for_clear_and_equal" format="reference" />
+</resources>
