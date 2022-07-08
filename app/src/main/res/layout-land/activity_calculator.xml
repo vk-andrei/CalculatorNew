@@ -28,7 +28,7 @@
         android:id="@+id/main_constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout

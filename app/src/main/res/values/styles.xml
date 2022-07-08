@@ -3,7 +3,7 @@
     <style name="Style_one" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_height">@dimen/buttons_height</item>
         <item name="android:textSize">@dimen/buttons_text_size</item>
         <item name="backgroundTint">#3B0CEC78</item>
         <item name="textAllCaps">false</item>
