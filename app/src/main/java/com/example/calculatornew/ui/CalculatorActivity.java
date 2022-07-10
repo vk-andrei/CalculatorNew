@@ -1,8 +1,16 @@
 package com.example.calculatornew.ui;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.view.View;
@@ -12,6 +20,9 @@ import android.widget.TextView;
 import com.example.calculatornew.R;
 import com.example.calculatornew.model.CalculatorExample;
 import com.example.calculatornew.model.Operator;
+import com.example.calculatornew.model.Theme;
+import com.example.calculatornew.model.ThemeReposImplementation;
+import com.example.calculatornew.model.ThemeRepository;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -22,9 +33,21 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     private TextView display;
     private CalculatorPresenter calculatorPresenter;
 
+    private ThemeRepository themeRepository;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /** Установка ТЕМЫ: **/
+     /*   SharedPreferences preferences = getSharedPreferences("theme.xml", Context.MODE_PRIVATE);
+        int theme = preferences.getInt("key_theme", R.style.Theme_CalculatorNew);
+        this.setTheme(theme);*/
+        themeRepository = ThemeReposImplementation.getINSTANCE(this);
+        setTheme(themeRepository.getSavedTheme().getThemeRes());
+        /*********************/
+
         setContentView(R.layout.activity_calculator);
 
         display = findViewById(R.id.display);
@@ -44,13 +67,11 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         digitsMap.put(R.id.BTN_eight, "8");
         digitsMap.put(R.id.BTN_nine, "9");
 
-
         Map<Integer, Operator> operatorMap = new HashMap<>();
         operatorMap.put(R.id.BTN_plus, Operator.ADD);
         operatorMap.put(R.id.BTN_minus, Operator.SUB);
         operatorMap.put(R.id.BTN_mult, Operator.MULT);
         operatorMap.put(R.id.BTN_divide, Operator.DIV);
-
 
         View.OnClickListener digitsOnClick = view -> calculatorPresenter.onDigitPressed(digitsMap.get(view.getId()));
 
@@ -69,9 +90,33 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         findViewById(R.id.BTN_point).setOnClickListener(view -> calculatorPresenter.onDotPressed());
         findViewById(R.id.BTN_equal).setOnClickListener(view -> calculatorPresenter.onEqualPressed());
         findViewById(R.id.BTN_sqrt).setOnClickListener(view -> calculatorPresenter.onSqrPressed());
-        findViewById(R.id.BTN_style).setOnClickListener(view -> calculatorPresenter.onStylePressed(view.getId()));
 
 
+        // TODO РАЗОБРАТЬСЯ С ЭТИМ!!!!!
+        // themeLauncher умеет ЗАПУСКАТЬ АКТИВТИ (и он теперь будет запускаться не просто, а с тем, чтобы
+        // следить за результатом. Когда ВТОРАЯ активити закроется ВЫПОЛНЕНИЕ прилетит СЮДА на эту строчку
+        // с каким-то РЕЗУЛЬТАТОМ
+        ActivityResultLauncher<Intent> themeLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent intent = result.getData();
+
+                    Theme selectedTheme = (Theme) intent.getSerializableExtra(ChooseThemeActivity.EXTRA_THEME);
+
+                    themeRepository.saveTheme(selectedTheme);
+                    recreate();
+                }
+            }
+        });
+
+        findViewById(R.id.BTN_style).setOnClickListener(view -> {
+            Intent intent = new Intent(CalculatorActivity.this, ChooseThemeActivity.class);
+            // передадим в этом интене инфо о теме
+            intent.putExtra(ChooseThemeActivity.EXTRA_THEME, themeRepository.getSavedTheme());
+            //startActivity(intent);
+            themeLauncher.launch(intent);
+        });
     }
 
     @Override

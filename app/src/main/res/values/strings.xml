@@ -21,4 +21,9 @@
     <string name="zero">0</string>
     <string name="point">.</string>
     <string name="equal">=</string>
+    <string name="default_text">THEME ONE</string>
+    <string name="themeOne">Theme 1</string>
+    <string name="themeTwo">Theme 2</string>
+    <string name="themeThree">Theme 3</string>
+
 </resources>

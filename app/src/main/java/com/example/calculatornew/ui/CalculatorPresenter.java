@@ -12,7 +12,7 @@ public class CalculatorPresenter {
     private String argOne = "0";
     private String argTwo = "";
     private Operator selectedOperator = null;
-    private final DecimalFormat decimalFormat = new DecimalFormat("#.###");
+    private final DecimalFormat decimalFormat = new DecimalFormat("#.####");
 
     public CalculatorPresenter(Calculator calculator, CalculatorView calculatorView) {
         this.calculator = calculator;

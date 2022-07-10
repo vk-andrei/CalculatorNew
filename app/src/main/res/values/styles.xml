@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Style_one" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
@@ -13,8 +14,28 @@
         <item name="android:textColor">@color/white</item>
         <item name="rippleColor">@color/white</item>
         <item name="strokeColor">@color/blueBlack</item>
+
     </style>
 
+    <!-- STYLES FOR BACKGROUND -->
+    <style name="Style_for_main_background_one">
+        <item name="android:windowBackground">@drawable/app_background_mar</item>
+    </style>
+    <style name="Style_for_main_background_two">
+        <item name="android:windowBackground">@drawable/app_background_night</item>
+    </style>
+    <style name="Style_for_main_background_three">
+        <item name="android:windowBackground">@drawable/app_background_sand</item>
+    </style>
+
+    <!-- STYLE FOR MATERIAL CARD -->
+    <style name="Style_Material_Card_View">
+        <item name="cardBackgroundColor">@color/cardBackgroundColor</item>
+        <item name="shapeAppearance">@color/card_shapeAppearance</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+    </style>
+
+    <!--STYLE ONE-->
     <style name="Style_one.Operators">
         <item name="android:textColor">@color/white</item>
         <item name="backgroundTint">#51E45A76</item>
@@ -24,14 +45,15 @@
         <item name="android:textColor">@color/white</item>
         <item name="backgroundTint">#6DFF0000</item>
     </style>
-    
 
+    <!--STYLE TWO-->
     <style name="Style_two" parent="Style_one">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:backgroundTint">#4DF68787</item>
         <item name="rippleColor">#4DF44336</item>
         <item name="strokeColor">#2E3F51B5</item>
     </style>
+
     <style name="Style_two.Operators">
         <item name="android:backgroundTint">#4D27FF00</item>
         <item name="android:textColor">#000000</item>
@@ -42,9 +64,22 @@
         <item name="android:textColor">#002AFF</item>
     </style>
 
+    <!--STYLE THREE-->
+    <style name="Style_three" parent="Style_one">
+        <item name="android:textColor">#CCB4B4</item>
+        <item name="android:backgroundTint">#EEF40000</item>
+        <item name="rippleColor">#4D59F436</item>
+        <item name="strokeColor">#2E0D28BC</item>
+    </style>
 
+    <style name="Style_three.Operators">
+        <item name="android:backgroundTint">#4D092904</item>
+        <item name="android:textColor">#0F3EE4</item>
+    </style>
 
-
-
+    <style name="Style_three.EqualAndClear">
+        <item name="android:backgroundTint">#4D308322</item>
+        <item name="android:textColor">#31374483</item>
+    </style>
 
 </resources>

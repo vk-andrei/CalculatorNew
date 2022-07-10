@@ -32,5 +32,8 @@
     <color name="buttons">#5E0CEC78</color>
     <color name="buttons_operators">#88DC0530</color>
     <color name="buttons_equal">#FF0000</color>
+    <color name="cardBackgroundColor">#202076DD</color>
+    <color name="card_shapeAppearance">#D2DAE3</color>
+
 
 </resources>

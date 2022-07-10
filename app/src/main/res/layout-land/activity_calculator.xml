@@ -44,22 +44,22 @@
 
                 <Button
                     android:id="@+id/BTN_clear"
-                    style="@style/Style_one.EqualAndClear"
+                    style="?attr/theme_for_clear_and_equal"
                     android:text="@string/c" />
 
                 <Button
                     android:id="@+id/BTN_backspace"
-                    style="@style/Style_one.Operators"
+                    style="?attr/theme_for_operators"
                     android:text="@string/back" />
 
                 <Button
                     android:id="@+id/BTN_sqrt"
-                    style="@style/Style_one.Operators"
+                    style="?attr/theme_for_operators"
                     android:text="@string/sqrt" />
 
                 <Button
                     android:id="@+id/BTN_divide"
-                    style="@style/Style_one.Operators"
+                    style="?attr/theme_for_operators"
                     android:text="@string/divide" />
 
             </LinearLayout>
@@ -71,22 +71,22 @@
 
                 <Button
                     android:id="@+id/BTN_seven"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/seven" />
 
                 <Button
                     android:id="@+id/BTN_eight"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/eight" />
 
                 <Button
                     android:id="@+id/BTN_nine"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/nine" />
 
                 <Button
                     android:id="@+id/BTN_mult"
-                    style="@style/Style_one.Operators"
+                    style="?attr/theme_for_operators"
                     android:text="@string/mult" />
 
             </LinearLayout>
@@ -98,22 +98,22 @@
 
                 <Button
                     android:id="@+id/BTN_four"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/four" />
 
                 <Button
                     android:id="@+id/BTN_five"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/five" />
 
                 <Button
                     android:id="@+id/BTN_six"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/six" />
 
                 <Button
                     android:id="@+id/BTN_minus"
-                    style="@style/Style_one.Operators"
+                    style="?attr/theme_for_operators"
                     android:text="@string/minus" />
 
             </LinearLayout>
@@ -125,22 +125,22 @@
 
                 <Button
                     android:id="@+id/BTN_one"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/one" />
 
                 <Button
                     android:id="@+id/BTN_two"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/two" />
 
                 <Button
                     android:id="@+id/BTN_three"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/three" />
 
                 <Button
                     android:id="@+id/BTN_plus"
-                    style="@style/Style_one.Operators"
+                    style="?attr/theme_for_operators"
                     android:text="@string/plus" />
 
             </LinearLayout>
@@ -152,22 +152,22 @@
 
                 <Button
                     android:id="@+id/BTN_style"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/style" />
 
                 <Button
                     android:id="@+id/BTN_zero"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/zero" />
 
                 <Button
                     android:id="@+id/BTN_point"
-                    style="@style/Style_one"
+                    style="?attr/theme_for_buttons"
                     android:text="@string/point" />
 
                 <Button
                     android:id="@+id/BTN_equal"
-                    style="@style/Style_one.EqualAndClear"
+                    style="?attr/theme_for_clear_and_equal"
                     android:text="@string/equal" />
 
             </LinearLayout>
