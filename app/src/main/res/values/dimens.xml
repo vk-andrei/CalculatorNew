@@ -2,7 +2,7 @@
 <resources>
     <dimen name="text_on_display">36sp</dimen>
     <dimen name="default_padding">10dp</dimen>
-    <dimen name="buttons_text_size">30sp</dimen>
+    <dimen name="buttons_text_size">25sp</dimen>
     <dimen name="buttons_height">60dp</dimen>
     <dimen name="small_padding">10dp</dimen>
     <dimen name="margin_for_title_theme">10dp</dimen>

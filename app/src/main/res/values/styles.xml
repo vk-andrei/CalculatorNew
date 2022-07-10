@@ -14,18 +14,19 @@
         <item name="android:textColor">@color/white</item>
         <item name="rippleColor">@color/white</item>
         <item name="strokeColor">@color/blueBlack</item>
-
     </style>
 
     <!-- STYLES FOR BACKGROUND -->
     <style name="Style_for_main_background_one">
-        <item name="android:windowBackground">@drawable/app_background_mar</item>
+        <item name="android:background">@drawable/app_background_mar</item>
     </style>
+
     <style name="Style_for_main_background_two">
-        <item name="android:windowBackground">@drawable/app_background_night</item>
+        <item name="android:background">@drawable/app_background_night</item>
     </style>
+
     <style name="Style_for_main_background_three">
-        <item name="android:windowBackground">@drawable/app_background_sand</item>
+        <item name="android:background">@drawable/app_background_sand</item>
     </style>
 
     <!-- STYLE FOR MATERIAL CARD -->
@@ -38,12 +39,12 @@
     <!--STYLE ONE-->
     <style name="Style_one.Operators">
         <item name="android:textColor">@color/white</item>
-        <item name="backgroundTint">#51E45A76</item>
+        <item name="backgroundTint">#75DFD1A7</item>
     </style>
 
     <style name="Style_one.EqualAndClear">
         <item name="android:textColor">@color/white</item>
-        <item name="backgroundTint">#6DFF0000</item>
+        <item name="backgroundTint">#2CFF0000</item>
     </style>
 
     <!--STYLE TWO-->

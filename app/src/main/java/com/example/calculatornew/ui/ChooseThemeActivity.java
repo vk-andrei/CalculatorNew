@@ -27,9 +27,15 @@ public class ChooseThemeActivity extends AppCompatActivity {
 
     public static final String EXTRA_THEME = "EXTRA_THEME";  // static???
 
+    private ThemeRepository themeRepository;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /** Установка ТЕМЫ: **/
+        themeRepository = ThemeReposImplementation.getINSTANCE(this);
+        setTheme(themeRepository.getSavedTheme().getThemeRes());
+        /*********************/
         setContentView(R.layout.activity_choose_theme);
 
         ThemeRepository themeRepository = ThemeReposImplementation.getINSTANCE(this);

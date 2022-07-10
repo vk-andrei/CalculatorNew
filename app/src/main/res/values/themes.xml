@@ -1,11 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.CalculatorNew" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!--Primary brand color.-->
+        <!--Primary brand color-->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
+        <!-- Secondary brand color -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
@@ -16,13 +16,11 @@
         <item name="theme_for_clear_and_equal">@style/Style_one.EqualAndClear</item>
         <item name="theme_for_operators">@style/Style_one.Operators</item>
 
-        <item name="fontFamily">@font/pt</item>
         <item name="theme_for_main_background">@style/Style_for_main_background_one</item>
+
         <item name="theme_for_card_view">@style/Style_Material_Card_View</item>
 
     </style>
-
-    <!--    <item name="android:windowBackground">@drawable/app_background_mar</item>  -->
 
     <!--THEME_TWO-->
     <style name="Theme.CalculatorNew.V2">
@@ -30,6 +28,7 @@
         <item name="theme_for_clear_and_equal">@style/Style_two.EqualAndClear</item>
         <item name="theme_for_operators">@style/Style_two.Operators</item>
         <item name="theme_for_main_background">@style/Style_for_main_background_two</item>
+
     </style>
 
     <!--THEME_THREE-->
