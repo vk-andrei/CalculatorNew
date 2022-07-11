@@ -8,11 +8,6 @@
     android:layout_marginHorizontal="@dimen/item_margin"
     android:layout_marginVertical="@dimen/small_padding">
 
-    <!--    app:shapeAppearance="@color/card_shapeAppearance"
-        app:cardElevation="@dimen/card_elevation"
-        app:cardBackgroundColor="@color/cardBackgroundColor"
-    -->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,7 +20,9 @@
             android:paddingLeft="@dimen/item_left_padding"
             android:text="@string/default_text"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/blueBlack"
+            android:textSize="@dimen/text_theme_size"
+            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/check"
             app:layout_constraintStart_toStartOf="parent"

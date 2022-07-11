@@ -6,17 +6,35 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">@dimen/buttons_height</item>
         <item name="android:textSize">@dimen/buttons_text_size</item>
-        <item name="backgroundTint">#3B0CEC78</item>
+        <item name="backgroundTint">#88BBBCB2</item>
         <item name="textAllCaps">false</item>
         <item name="cornerRadius">0dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/blueBlack</item>
         <item name="rippleColor">@color/white</item>
         <item name="strokeColor">@color/blueBlack</item>
     </style>
 
-    <!-- STYLES FOR BACKGROUND -->
+    <!-- STYLES FOR DISPLAY-->
+    <style name="Style_for_display_one">
+        <item name="android:textColor">@color/blueBlack</item>
+        <item name="android:textColorHint">@color/greyAccent</item>
+    </style>
+
+    <style name="Style_for_display_two">
+        <item name="android:textColor">@color/greenAccent</item>
+        <item name="android:textColorHint">@color/greenBackground</item>
+    </style>
+
+    <style name="Style_for_display_three">
+        <item name="android:textColor">#0046FA</item>
+        <item name="android:textColorHint">#5B0C92E8</item>
+    </style>
+
+
+
+    <!-- STYLES FOR BACKGROUND #3B0CEC78-->
     <style name="Style_for_main_background_one">
         <item name="android:background">@drawable/app_background_mar</item>
     </style>
@@ -26,7 +44,7 @@
     </style>
 
     <style name="Style_for_main_background_three">
-        <item name="android:background">@drawable/app_background_sand</item>
+        <item name="android:background">@drawable/app_background_sea2</item>
     </style>
 
     <!-- STYLE FOR MATERIAL CARD -->
@@ -38,49 +56,49 @@
 
     <!--STYLE ONE-->
     <style name="Style_one.Operators">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/black</item>
         <item name="backgroundTint">#75DFD1A7</item>
     </style>
 
     <style name="Style_one.EqualAndClear">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/buttons_equal</item>
         <item name="backgroundTint">#2CFF0000</item>
     </style>
 
     <!--STYLE TWO-->
     <style name="Style_two" parent="Style_one">
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:backgroundTint">#4DF68787</item>
+        <item name="android:backgroundTint">#3C67408E</item>
         <item name="rippleColor">#4DF44336</item>
         <item name="strokeColor">#2E3F51B5</item>
     </style>
 
     <style name="Style_two.Operators">
-        <item name="android:backgroundTint">#4D27FF00</item>
-        <item name="android:textColor">#000000</item>
+        <item name="android:backgroundTint">#560D3306</item>
+        <item name="android:textColor">#7C4DFF</item>
     </style>
 
     <style name="Style_two.EqualAndClear">
-        <item name="android:backgroundTint">#4DAC03F4</item>
-        <item name="android:textColor">#002AFF</item>
+        <item name="android:backgroundTint">#289F1ED6</item>
+        <item name="android:textColor">#F82C8506</item>
     </style>
 
     <!--STYLE THREE-->
     <style name="Style_three" parent="Style_one">
-        <item name="android:textColor">#CCB4B4</item>
-        <item name="android:backgroundTint">#EEF40000</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:backgroundTint">#430029F4</item>
         <item name="rippleColor">#4D59F436</item>
         <item name="strokeColor">#2E0D28BC</item>
     </style>
 
     <style name="Style_three.Operators">
-        <item name="android:backgroundTint">#4D092904</item>
+        <item name="android:backgroundTint">#B718FFFF</item>
         <item name="android:textColor">#0F3EE4</item>
     </style>
 
     <style name="Style_three.EqualAndClear">
-        <item name="android:backgroundTint">#4D308322</item>
-        <item name="android:textColor">#31374483</item>
+        <item name="android:backgroundTint">#90FFFFFF</item>
+        <item name="android:textColor">#000000</item>
     </style>
 
 </resources>

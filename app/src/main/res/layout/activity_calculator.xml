@@ -9,6 +9,7 @@
 
     <TextView
         android:id="@+id/display"
+        style="?attr/theme_for_display"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/default_padding"
@@ -16,9 +17,8 @@
         android:hint="@string/displayHint"
         android:importantForAutofill="no"
         android:textAlignment="textEnd"
-        android:textColor="@color/white"
-        android:textColorHint="@color/greyAccent"
         android:textSize="@dimen/text_on_display"
+        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/main_constraint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/main_constraint"

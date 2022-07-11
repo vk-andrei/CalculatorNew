@@ -2,22 +2,21 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="?attr/theme_for_main_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_background"
     tools:context=".ui.CalculatorActivity">
 
     <TextView
         android:id="@+id/display"
+        style="?attr/theme_for_display"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/default_padding"
         android:gravity="end|bottom"
         android:hint="@string/displayHint"
-        android:textColorHint="@color/greyAccent"
         android:importantForAutofill="no"
         android:textAlignment="textEnd"
-        android:textColor="@color/white"
         android:textSize="@dimen/text_on_display"
         app:layout_constraintBottom_toTopOf="@+id/main_constraint"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +27,6 @@
         android:id="@+id/main_constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout

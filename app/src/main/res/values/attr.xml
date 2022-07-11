@@ -5,5 +5,7 @@
     <attr name="theme_for_clear_and_equal" format="reference" />
     <attr name="theme_for_card_view" format="reference"/>
 
+    <attr name="theme_for_display" format="reference"/>
+
     <attr name="theme_for_main_background" format="reference"/>
 </resources>

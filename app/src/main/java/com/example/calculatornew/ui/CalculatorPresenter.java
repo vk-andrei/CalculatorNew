@@ -1,22 +1,43 @@
 package com.example.calculatornew.ui;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.example.calculatornew.model.Calculator;
 import com.example.calculatornew.model.Operator;
 
-import java.text.DecimalFormat;
-
-public class CalculatorPresenter {
+public class CalculatorPresenter { //implements Parcelable {
 
     private final Calculator calculator;
     private final CalculatorView calculatorView;
     private String argOne = "0";
     private String argTwo = "";
     private Operator selectedOperator = null;
-    private final DecimalFormat decimalFormat = new DecimalFormat("#.####");
 
     public CalculatorPresenter(Calculator calculator, CalculatorView calculatorView) {
         this.calculator = calculator;
         this.calculatorView = calculatorView;
+    }
+
+    public void setData(CalculatorPresenter.Data data) {
+        if (data != null) {
+            argOne = data.getArgOne();
+            argTwo = data.getArgTwo();
+            selectedOperator = data.getSelectedOperator();
+        }
+    }
+
+    public CalculatorPresenter.Data getData() {
+        return new CalculatorPresenter.Data(argOne, argTwo, selectedOperator);
+    }
+
+
+    public void setArgOne(String argOne) {
+        this.argOne = argOne;
+    }
+
+    public void setArgTwo(String argTwo) {
+        this.argTwo = argTwo;
     }
 
     private void calc() {
@@ -25,7 +46,7 @@ public class CalculatorPresenter {
         argTwo = "";
     }
 
-    private void updateState() {
+    protected void updateState() {
         if (selectedOperator != null) {
             if (argTwo.equals("")) {
                 calculatorView.showResult(argOne);
@@ -119,6 +140,64 @@ public class CalculatorPresenter {
         }
     }
 
-    public void onStylePressed(int styleId) {
+
+    /**
+     * класс для хранения инфы и передачи ее
+     **/
+
+    public static class Data implements Parcelable {
+
+        private final String argOne;
+        private final String argTwo;
+        private final Operator selectedOperator;
+
+        public Data(String argOne, String argTwo, Operator selectedOperator) {
+            this.argOne = argOne;
+            this.argTwo = argTwo;
+            this.selectedOperator = selectedOperator;
+        }
+
+        protected Data(Parcel in) {
+            argOne = in.readString();
+            argTwo = in.readString();
+            selectedOperator = Operator.values()[in.readInt()];
+        }
+
+        public String getArgOne() {
+            return argOne;
+        }
+
+        public String getArgTwo() {
+            return argTwo;
+        }
+
+        public Operator getSelectedOperator() {
+            return selectedOperator;
+        }
+
+        public static final Creator<Data> CREATOR = new Creator<Data>() {
+            @Override
+            public Data createFromParcel(Parcel in) {
+                return new Data(in);
+            }
+
+            @Override
+            public Data[] newArray(int size) {
+                return new Data[size];
+            }
+        };
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel parcel, int i) {
+            parcel.writeString(argOne);
+            parcel.writeString(argTwo);
+            parcel.writeInt(selectedOperator.ordinal());
+        }
     }
+
 }

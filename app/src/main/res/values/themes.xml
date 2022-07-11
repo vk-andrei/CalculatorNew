@@ -20,6 +20,8 @@
 
         <item name="theme_for_card_view">@style/Style_Material_Card_View</item>
 
+        <item name="theme_for_display">@style/Style_for_display_one</item>
+
     </style>
 
     <!--THEME_TWO-->
@@ -28,7 +30,7 @@
         <item name="theme_for_clear_and_equal">@style/Style_two.EqualAndClear</item>
         <item name="theme_for_operators">@style/Style_two.Operators</item>
         <item name="theme_for_main_background">@style/Style_for_main_background_two</item>
-
+        <item name="theme_for_display">@style/Style_for_display_two</item>
     </style>
 
     <!--THEME_THREE-->
@@ -37,6 +39,7 @@
         <item name="theme_for_clear_and_equal">@style/Style_three.EqualAndClear</item>
         <item name="theme_for_operators">@style/Style_three.Operators</item>
         <item name="theme_for_main_background">@style/Style_for_main_background_three</item>
+        <item name="theme_for_display">@style/Style_for_display_three</item>
     </style>
 
 </resources>

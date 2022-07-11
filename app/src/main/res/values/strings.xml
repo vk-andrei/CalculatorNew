@@ -2,13 +2,13 @@
     <string name="app_name">CalculatorNew</string>
     <string name="displayHint">enter a value</string>
     <string name="c">C</string>
-    <string name="back">back</string>
-    <string name="sqrt">sqrt</string>
-    <string name="divide">/</string>
+    <string name="back">◅</string>
+    <string name="sqrt">√</string>
+    <string name="divide">÷</string>
     <string name="seven">7</string>
     <string name="eight">8</string>
     <string name="nine">9</string>
-    <string name="mult">X</string>
+    <string name="mult">×</string>
     <string name="four">4</string>
     <string name="five">5</string>
     <string name="six">6</string>
@@ -17,13 +17,13 @@
     <string name="two">2</string>
     <string name="three">3</string>
     <string name="plus">+</string>
-    <string name="style">stl</string>
+    <string name="style">🛠</string>
     <string name="zero">0</string>
     <string name="point">.</string>
     <string name="equal">=</string>
     <string name="default_text">THEME ONE</string>
-    <string name="themeOne">Theme 1</string>
-    <string name="themeTwo">Theme 2</string>
-    <string name="themeThree">Theme 3</string>
+    <string name="themeOne">Marble theme</string>
+    <string name="themeTwo">Night theme</string>
+    <string name="themeThree">Sea theme</string>
 
 </resources>

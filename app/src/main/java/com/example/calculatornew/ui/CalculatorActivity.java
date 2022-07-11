@@ -5,14 +5,17 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Parcel;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -53,6 +56,8 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         display = findViewById(R.id.display);
         display.setShowSoftInputOnFocus(false); // not to show android keyboard
 
+        //final MediaPlayer mediaPlayerBTNs = MediaPlayer.create(this, R.raw.btn_click);
+
         calculatorPresenter = new CalculatorPresenter(new CalculatorExample(), this);
 
         Map<Integer, String> digitsMap = new HashMap<>();
@@ -73,13 +78,19 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         operatorMap.put(R.id.BTN_mult, Operator.MULT);
         operatorMap.put(R.id.BTN_divide, Operator.DIV);
 
-        View.OnClickListener digitsOnClick = view -> calculatorPresenter.onDigitPressed(digitsMap.get(view.getId()));
+        View.OnClickListener digitsOnClick = view -> {
+            //mediaPlayerBTNs.start();
+            calculatorPresenter.onDigitPressed(digitsMap.get(view.getId()));
+        };
 
         for (Map.Entry entry : digitsMap.entrySet()) {
             findViewById((int) entry.getKey()).setOnClickListener(digitsOnClick);
         }
 
-        View.OnClickListener operatorOnClick = view -> calculatorPresenter.onOperatorsPressed(operatorMap.get(view.getId()));
+        View.OnClickListener operatorOnClick = view -> {
+            //mediaPlayerBTNs.start();
+            calculatorPresenter.onOperatorsPressed(operatorMap.get(view.getId()));
+        };
 
         for (Map.Entry entry : operatorMap.entrySet()) {
             findViewById((int) entry.getKey()).setOnClickListener(operatorOnClick);
@@ -122,6 +133,27 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     @Override
     public void showResult(String text) {
         display.setText(text);
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("PARSE", calculatorPresenter.getData());
+
+
+//        outState.putString("ARG_ONE", calculatorPresenter.getArgOne());
+//        outState.putString("ARG_TWO", calculatorPresenter.getArgTwo());
+//        outState.put("SELECTED_OPERATOR", calculatorPresenter.getSelectedOperator());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        calculatorPresenter.setData(savedInstanceState.getParcelable("PARSE"));
 
     }
-}
+//        calculatorPresenter.setArgOne(savedInstanceState.getString("ARG_ONE"));
+//        calculatorPresenter.setArgTwo(savedInstanceState.getString("ARG_TWO"));
+//        calculatorPresenter.updateState();
+//
+    }
