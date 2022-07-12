@@ -7,21 +7,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.accessibility.AccessibilityManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.calculatornew.R;
 import com.example.calculatornew.model.Theme;
 import com.example.calculatornew.model.ThemeReposImplementation;
 import com.example.calculatornew.model.ThemeRepository;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class ChooseThemeActivity extends AppCompatActivity {
 
@@ -49,7 +44,7 @@ public class ChooseThemeActivity extends AppCompatActivity {
 
         for (Theme theme : themeList) {
 
-            View itemView  = getLayoutInflater().inflate(R.layout.item_theme, container, false);
+            View itemView = getLayoutInflater().inflate(R.layout.item_theme, container, false);
 
             // CHILDREN OF itemView:
             // 1
@@ -79,8 +74,6 @@ public class ChooseThemeActivity extends AppCompatActivity {
 
             // Add view to container
             container.addView(itemView);
-
         }
-
     }
 }

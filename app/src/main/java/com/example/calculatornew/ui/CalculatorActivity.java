@@ -4,20 +4,13 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.PersistableBundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.calculatornew.R;
@@ -27,7 +20,6 @@ import com.example.calculatornew.model.Theme;
 import com.example.calculatornew.model.ThemeReposImplementation;
 import com.example.calculatornew.model.ThemeRepository;
 
-import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,9 +27,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
     private TextView display;
     private CalculatorPresenter calculatorPresenter;
-
     private ThemeRepository themeRepository;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,13 +135,5 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelable("PARSE", calculatorPresenter.getData());
-
     }
 }
-//        calculatorPresenter.setArgOne(savedInstanceState.getString("ARG_ONE"));
-//        calculatorPresenter.setArgTwo(savedInstanceState.getString("ARG_TWO"));
-//        calculatorPresenter.updateState();
-
-//        outState.putString("ARG_ONE", calculatorPresenter.getArgOne());
-//        outState.putString("ARG_TWO", calculatorPresenter.getArgTwo());
-//        outState.put("SELECTED_OPERATOR", calculatorPresenter.getSelectedOperator());

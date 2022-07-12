@@ -9,5 +9,4 @@ public interface ThemeRepository {
     Theme getSavedTheme();
 
     List<Theme> getAllThemes();
-
 }
