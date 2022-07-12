@@ -23,6 +23,10 @@ public class CalculatorExample implements Calculator {
             case MULT:
                 return Double.parseDouble(formatter.format(firstArg * secondArg));
             case DIV:
+                if (secondArg == 0) {
+                    return 0.0;
+                    //return Double.parseDouble(formatter.format(Double.MAX_VALUE));
+                }
                 return Double.parseDouble(formatter.format(firstArg / secondArg));
             case SQRT:
                 return Double.parseDouble(formatter.format(Math.sqrt(firstArg)));
