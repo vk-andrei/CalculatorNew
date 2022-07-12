@@ -136,24 +136,22 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     }
 
     @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        calculatorPresenter.setData(savedInstanceState.getParcelable("PARSE"));
+    }
+
+    @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelable("PARSE", calculatorPresenter.getData());
 
+    }
+}
+//        calculatorPresenter.setArgOne(savedInstanceState.getString("ARG_ONE"));
+//        calculatorPresenter.setArgTwo(savedInstanceState.getString("ARG_TWO"));
+//        calculatorPresenter.updateState();
 
 //        outState.putString("ARG_ONE", calculatorPresenter.getArgOne());
 //        outState.putString("ARG_TWO", calculatorPresenter.getArgTwo());
 //        outState.put("SELECTED_OPERATOR", calculatorPresenter.getSelectedOperator());
-    }
-
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        calculatorPresenter.setData(savedInstanceState.getParcelable("PARSE"));
-
-    }
-//        calculatorPresenter.setArgOne(savedInstanceState.getString("ARG_ONE"));
-//        calculatorPresenter.setArgTwo(savedInstanceState.getString("ARG_TWO"));
-//        calculatorPresenter.updateState();
-//
-    }

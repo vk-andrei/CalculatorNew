@@ -12,7 +12,7 @@ public class CalculatorPresenter { //implements Parcelable {
     private final CalculatorView calculatorView;
     private String argOne = "0";
     private String argTwo = "";
-    private Operator selectedOperator = null;
+    private Operator selectedOperator = Operator.NONE;
 
     public CalculatorPresenter(Calculator calculator, CalculatorView calculatorView) {
         this.calculator = calculator;
@@ -24,6 +24,7 @@ public class CalculatorPresenter { //implements Parcelable {
             argOne = data.getArgOne();
             argTwo = data.getArgTwo();
             selectedOperator = data.getSelectedOperator();
+            updateState();
         }
     }
 
@@ -47,7 +48,7 @@ public class CalculatorPresenter { //implements Parcelable {
     }
 
     protected void updateState() {
-        if (selectedOperator != null) {
+        if (selectedOperator != Operator.NONE) {  //        if (selectedOperator != null) {
             if (argTwo.equals("")) {
                 calculatorView.showResult(argOne);
             } else {
@@ -59,7 +60,7 @@ public class CalculatorPresenter { //implements Parcelable {
     }
 
     public void onDigitPressed(String number) {
-        if (selectedOperator != null) {
+        if (selectedOperator != Operator.NONE) {  //        if (selectedOperator != null) {
             argTwo += number;
         } else {
             if (argOne.equals("0")) {
@@ -72,7 +73,7 @@ public class CalculatorPresenter { //implements Parcelable {
     }
 
     public void onOperatorsPressed(Operator operator) {
-        if (selectedOperator != null && !argTwo.equals("")) {
+        if (selectedOperator != Operator.NONE && !argTwo.equals("")) {  //        if (selectedOperator != null && !argTwo.equals("")) {
             calc();
         }
         selectedOperator = operator;
@@ -104,7 +105,8 @@ public class CalculatorPresenter { //implements Parcelable {
 
     // IMPLEMENTATION OF DOT!!! MOTHERFUCKER!!!
     public void onDotPressed() {
-        if (selectedOperator != null && !argTwo.contains(".")) {
+        if (selectedOperator != Operator.NONE && !argTwo.contains(".")) {   //        if (selectedOperator != null && !argTwo.contains(".")) {
+
             argTwo += ".";
             updateState();
         } else {
@@ -116,15 +118,17 @@ public class CalculatorPresenter { //implements Parcelable {
     }
 
     public void onEqualPressed() {
-        if (selectedOperator != null && !argTwo.equals("")) {
-            calc();
+        // if (selectedOperator != null && !argTwo.equals("")) {
+        if (selectedOperator != Operator.NONE && !argTwo.equals("")) {
+                calc();
+            }
         }
-    }
 
     public void onClearPressed() {
         argOne = "";
         argTwo = "";
-        selectedOperator = null;
+        // selectedOperator = null;
+        selectedOperator = Operator.NONE;
         calculatorView.showResult("0");
     }
 
