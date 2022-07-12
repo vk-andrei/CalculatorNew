@@ -6,4 +6,5 @@ public enum Operator {
     MULT,
     DIV,
     SQRT,
+    NONE
 }
